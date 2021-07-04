@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wakeonlan</title>
+    <title>Wakeonlan🖥️</title>
 
     <link
       rel="stylesheet"
@@ -14,25 +14,24 @@
 
   <body>
     <div style="margin-top: 50px" class="ui container">
-      <h1 class="ui center aligned header">Wakeonlan</h1>
+      <h1 class="ui center aligned header">Wakeonlan🖥️</h1>
 
       <form class="ui form" action="/add" method="post">
         <div class="field">
-          <label>Wakeonlan Title</label>
-          <input type="text" name="ip" placeholder="Enter IP..." /><br />
-          <input type="text" name="mac" placeholder="Enter MAC..." /><br />
+          <input type="text" name="title" placeholder="Enter title..." /><br />
+          <input type="text" name="mac" placeholder="Enter Mac address..." /><br />
         </div>
         <button class="ui blue button" type="submit">Add</button>
       </form>
 
       <hr />
 
-      {% for todo in todo_list %}
+      {% for item in item_list %}
       <div class="ui segment">
-        <p class="ui big header">{{ todo.id }} | {{ todo.ip }} | {{ todo.mac }}</p>
+        <p class="ui big header">{{ item.title }} | {{ item.mac }}</p>
 
-        <a class="ui blue button" href="/wake/{{ todo.id }}">Wake</a>
-        <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+        <a class="ui blue button" href="/wake/{{ item.id }}">Wake</a>
+        <a class="ui red button" href="/delete/{{ item.id }}">Delete</a>
       </div>
       {% endfor %}
     </div>
